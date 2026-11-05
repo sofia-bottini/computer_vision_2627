@@ -28,9 +28,7 @@ for filename in images:
     image = cv2.imread(str(image_path))
 
     if image is None:
-        raise FileNotFoundError(
-            f"Impossibile leggere: {image_path}"
-        )
+        raise FileNotFoundError(f"Impossibile leggere: {image_path}")
 
     # Conversione a float
     image_float = image.astype(np.float32)
@@ -53,9 +51,7 @@ for filename in images:
     degraded = degraded.astype(np.uint8)
 
     # Salvataggio PNG senza perdita
-    output_path = OUTPUT_DIR / (
-        Path(filename).stem + ".png"
-    )
+    output_path = OUTPUT_DIR / (Path(filename).stem + ".png")
 
     if not cv2.imwrite(str(output_path), degraded):
         raise IOError(f"Salvataggio fallito: {output_path}")
