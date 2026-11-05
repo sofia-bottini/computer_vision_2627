@@ -152,9 +152,6 @@ HW1_VR545790/
     └── metrics.csv
 ```
 
-## Main observations
-
-For the current three-image experiment, Linear Contrast Stretching improved PSNR over the baseline on each image. SSIM also improved for the sea image, but decreased for the sunrise and aquarium images. Histogram Equalization and Gamma Correction visibly revealed some dark details but often increased noise or changed brightness and colors. Therefore, the final choice of enhancement should rely on both quantitative metrics and qualitative analysis, not on one metric alone.
 
 ## References
 
