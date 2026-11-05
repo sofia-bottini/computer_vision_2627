@@ -25,7 +25,6 @@ def main():
             
         print(f"\nEsecuzione di {script}")
         
-        # Esegue lo script usando lo stesso interprete Python corrente
         result = subprocess.run([sys.executable, str(script_path)])
         
         # Se uno script fallisce, interrompo la pipeline
