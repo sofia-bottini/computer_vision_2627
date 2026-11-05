@@ -1,0 +1,13 @@
+Image,Method,PSNR (dB),SSIM
+mare,Baseline,16.1,0.7861
+mare,Linear Contrast Stretching,23.31,0.8291
+mare,Histogram Equalization,13.58,0.5652
+mare,Gamma Correction,18.25,0.6607
+alba,Baseline,23.45,0.5735
+alba,Linear Contrast Stretching,25.4,0.5305
+alba,Histogram Equalization,11.74,0.1468
+alba,Gamma Correction,11.21,0.3124
+acquario,Baseline,19.49,0.5687
+acquario,Linear Contrast Stretching,20.96,0.5355
+acquario,Histogram Equalization,17.05,0.3051
+acquario,Gamma Correction,15.8,0.4819
