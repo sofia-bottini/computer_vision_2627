@@ -45,9 +45,6 @@ def histogram_equalization(image):
     """
     Applica Histogram Equalization alla componente V
     dello spazio colore HSV.
-
-    Input: immagine BGR uint8
-    Output: immagine BGR uint8
     """
 
     # 1. Conversione da BGR a HSV
