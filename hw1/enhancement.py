@@ -22,7 +22,7 @@ def linear_contrast_stretching(image):
     v_min = np.min(v_float)
     v_max = np.max(v_float)
 
-    # Evitiamo divisioni per zero
+    # Evito divisioni per zero
     if v_max == v_min:
         return image.copy()
 
