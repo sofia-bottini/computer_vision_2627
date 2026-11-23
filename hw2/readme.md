@@ -111,8 +111,6 @@ Per questi classificatori, `StandardScaler` è inserito in una `Pipeline` e vien
 Lo script aggiornato disponibile è `main_corrected.py`. **Se nel repository lo rinomini in `main.py`, utilizza il secondo comando.**
 
 ```bash
-python main_corrected.py
-# oppure, se il file è stato rinominato:
 python main.py
 ```
 
@@ -135,7 +133,7 @@ L'esecuzione completa può richiedere tempo; la durata dipende dall'hardware. Le
 
 ```text
 .
-├── main_corrected.py             # oppure main.py, se rinominato
+├── main.py   
 ├── README.md
 ├── requirements.txt
 ├── splits/
@@ -181,11 +179,11 @@ Il codice aggiornato distingue in `results/results_table.csv` e `results/metrics
 
 Per Logistic Regression e Linear SVM la complessità viene riportata come numero di coefficienti e intercette. Per Random Forest è riportato separatamente il numero di nodi degli alberi, **non equivalente ai parametri trainabili di una rete neurale**.
 
-## 7. Risultati del report originale (macOS / MPS)
+## 7. Risultati (macOS / MPS)
 
-Questi sono i risultati registrati con `main.py`** sul Mac.
+Questi sono i risultati ottenuti eseguendo `python main.py` su macOS (Apple Silicon, backend `mps` per PyTorch e `cpu` per scikit-learn).
 
-| Approccio | Test accuracy | Test macro-F1 | Tempo riportato (s) |
+| Approccio | Test accuracy | Test macro-F1 | Tempo pipeline (s) |
 | --- | ---: | ---: | ---: |
 | Full fine-tuning | 0.8283 | 0.8245 | 281.0 |
 | Head training | **0.8700** | **0.8687** | 165.6 |
@@ -193,7 +191,7 @@ Questi sono i risultati registrati con `main.py`** sul Mac.
 | Features + Linear SVM | 0.8335 | 0.8309 | 17.2 |
 | Features + Random Forest | 0.8307 | 0.8255 | 12.9 |
 
-**Nota metodologica sui tempi originali:** per le reti neurali i tempi comprendono le 15 epoche con le valutazioni di validation, ma non la valutazione finale sul test. Per i classificatori tradizionali comprendono l'estrazione delle feature di train, validation **e test**, più il fit del solo candidato selezionato; **non** l'intera ricerca degli iperparametri. La parte PyTorch usa MPS, mentre scikit-learn usa CPU: non si tratta di un benchmark hardware perfettamente omogeneo.
+**Nota metodologica sui tempi:** per le reti neurali il tempo comprende le 15 epoche di training, validation e checkpointing (esclusa la valutazione finale sul test). Per i classificatori scikit-learn il tempo riportato è la somma dell'estrazione delle feature di **train + validation** (`11.1 s`, eseguibile una sola volta) e del fit del solo classificatore selezionato (`0.5 s` Logistic Regression, `6.2 s` Linear SVM, `1.9 s` Random Forest). L'estrazione delle feature del test (`11.2 s`) e i tempi dell'intera ricerca degli iperparametri sono registrati separatamente in `results/metrics.json` e `results/results_table.csv`. Poiché PyTorch utilizza `mps` e scikit-learn la CPU, il confronto dei tempi riflette il costo pratico sulla stessa macchina ma non è un benchmark hardware omogeneo.
 
 Una nuova esecuzione di `main_corrected.py` genera metriche proprie e tempi con definizioni differenti. **Non mescolare figure, checkpoint o metriche di esecuzioni diverse** senza documentare la provenienza. Se nel repository si mantengono gli output originali del Mac, indicarli come tali e conservarli coerentemente con il report.
 
