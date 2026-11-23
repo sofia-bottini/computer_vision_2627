@@ -108,8 +108,6 @@ Per questi classificatori, `StandardScaler` è inserito in una `Pipeline` e vien
 
 ## 5. Esecuzione e riproduzione
 
-Lo script aggiornato disponibile è `main_corrected.py`. **Se nel repository lo rinomini in `main.py`, utilizza il secondo comando.**
-
 ```bash
 python main.py
 ```
@@ -192,8 +190,6 @@ Questi sono i risultati ottenuti eseguendo `python main.py` su macOS (Apple Sili
 | Features + Random Forest | 0.8307 | 0.8255 | 12.9 |
 
 **Nota metodologica sui tempi:** per le reti neurali il tempo comprende le 15 epoche di training, validation e checkpointing (esclusa la valutazione finale sul test). Per i classificatori scikit-learn il tempo riportato è la somma dell'estrazione delle feature di **train + validation** (`11.1 s`, eseguibile una sola volta) e del fit del solo classificatore selezionato (`0.5 s` Logistic Regression, `6.2 s` Linear SVM, `1.9 s` Random Forest). L'estrazione delle feature del test (`11.2 s`) e i tempi dell'intera ricerca degli iperparametri sono registrati separatamente in `results/metrics.json` e `results/results_table.csv`. Poiché PyTorch utilizza `mps` e scikit-learn la CPU, il confronto dei tempi riflette il costo pratico sulla stessa macchina ma non è un benchmark hardware omogeneo.
-
-Una nuova esecuzione di `main_corrected.py` genera metriche proprie e tempi con definizioni differenti. **Non mescolare figure, checkpoint o metriche di esecuzioni diverse** senza documentare la provenienza. Se nel repository si mantengono gli output originali del Mac, indicarli come tali e conservarli coerentemente con il report.
 
 ## 8. Riferimenti
 
