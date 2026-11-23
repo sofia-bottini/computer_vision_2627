@@ -88,7 +88,7 @@ Il dataset viene scaricato automaticamente da TorchVision durante la prima esecu
 | Ottimizzatore | AdamW | AdamW | Implementazione scikit-learn |
 | Learning rate | `3e-4` | `1e-3` | Non applicabile |
 | Weight decay | `1e-4` | `1e-4` | Non applicabile |
-| Batch size | 64 | 64 per estrazione/inferenza | 64 per estrazione feature |
+| Batch size | 64 | 64 | 64 per estrazione feature |
 | Epoche | 15 | 15 | Non applicabile |
 | Scheduler | CosineAnnealingLR, `T_max=15` | CosineAnnealingLR, `T_max=15` | Non applicabile |
 
