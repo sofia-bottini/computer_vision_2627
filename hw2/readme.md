@@ -183,15 +183,15 @@ Per Logistic Regression e Linear SVM la complessità viene riportata come numero
 
 ## 7. Risultati del report originale (macOS / MPS)
 
-Questi sono i risultati registrati con la **versione originale di `main.py`** sul Mac, prima delle correzioni alla registrazione dei tempi. **Non sono da presentare come output di una nuova esecuzione di `main_corrected.py`.**
+Questi sono i risultati registrati con `main.py`** sul Mac.
 
 | Approccio | Test accuracy | Test macro-F1 | Tempo riportato (s) |
 | --- | ---: | ---: | ---: |
-| Full fine-tuning | 0.8283 | 0.8245 | 276.6 |
-| Head training | **0.8700** | **0.8687** | 161.7 |
-| Features + Logistic Regression | 0.8569 | 0.8551 | 22.7 |
-| Features + Linear SVM | 0.8335 | 0.8309 | 28.5 |
-| Features + Random Forest | 0.8307 | 0.8255 | 24.1 |
+| Full fine-tuning | 0.8283 | 0.8245 | 281.0 |
+| Head training | **0.8700** | **0.8687** | 165.6 |
+| Features + Logistic Regression | 0.8569 | 0.8551 | 11.5 |
+| Features + Linear SVM | 0.8335 | 0.8309 | 17.2 |
+| Features + Random Forest | 0.8307 | 0.8255 | 12.9 |
 
 **Nota metodologica sui tempi originali:** per le reti neurali i tempi comprendono le 15 epoche con le valutazioni di validation, ma non la valutazione finale sul test. Per i classificatori tradizionali comprendono l'estrazione delle feature di train, validation **e test**, più il fit del solo candidato selezionato; **non** l'intera ricerca degli iperparametri. La parte PyTorch usa MPS, mentre scikit-learn usa CPU: non si tratta di un benchmark hardware perfettamente omogeneo.
 
