@@ -1,0 +1,51 @@
+approach,true,predicted,count
+Full fine-tuning,American Pit Bull Terrier,Staffordshire Bull Terrier,26
+Full fine-tuning,American Pit Bull Terrier,American Bulldog,17
+Full fine-tuning,Birman,Ragdoll,16
+Full fine-tuning,American Pit Bull Terrier,German Shorthaired,13
+Full fine-tuning,Ragdoll,Birman,13
+Full fine-tuning,Chihuahua,Shiba Inu,12
+Full fine-tuning,Basset Hound,Beagle,12
+Full fine-tuning,Staffordshire Bull Terrier,American Bulldog,11
+Full fine-tuning,Russian Blue,British Shorthair,9
+Full fine-tuning,Miniature Pinscher,Staffordshire Bull Terrier,9
+Head training,American Pit Bull Terrier,Staffordshire Bull Terrier,19
+Head training,American Pit Bull Terrier,American Bulldog,19
+Head training,English Cocker Spaniel,English Setter,13
+Head training,Ragdoll,Birman,13
+Head training,Russian Blue,British Shorthair,12
+Head training,Staffordshire Bull Terrier,American Bulldog,12
+Head training,Bengal,Egyptian Mau,11
+Head training,Birman,Ragdoll,11
+Head training,Basset Hound,Beagle,10
+Head training,Maine Coon,Bengal,9
+Features + Logistic regression,American Pit Bull Terrier,Staffordshire Bull Terrier,18
+Features + Logistic regression,Birman,Ragdoll,15
+Features + Logistic regression,Ragdoll,Birman,15
+Features + Logistic regression,American Pit Bull Terrier,American Bulldog,14
+Features + Logistic regression,English Cocker Spaniel,English Setter,13
+Features + Logistic regression,Maine Coon,Bengal,12
+Features + Logistic regression,Chihuahua,Shiba Inu,10
+Features + Logistic regression,Russian Blue,British Shorthair,10
+Features + Logistic regression,Staffordshire Bull Terrier,American Bulldog,10
+Features + Logistic regression,Maine Coon,Ragdoll,9
+Features + Linear SVM,American Pit Bull Terrier,American Bulldog,17
+Features + Linear SVM,Ragdoll,Birman,14
+Features + Linear SVM,Siamese,Birman,12
+Features + Linear SVM,Staffordshire Bull Terrier,American Bulldog,12
+Features + Linear SVM,Maine Coon,Bengal,11
+Features + Linear SVM,Chihuahua,Shiba Inu,11
+Features + Linear SVM,Russian Blue,British Shorthair,11
+Features + Linear SVM,Staffordshire Bull Terrier,American Pit Bull Terrier,11
+Features + Linear SVM,Birman,Siamese,11
+Features + Linear SVM,American Pit Bull Terrier,Staffordshire Bull Terrier,10
+Features + Random forest,American Pit Bull Terrier,American Bulldog,19
+Features + Random forest,Ragdoll,Birman,18
+Features + Random forest,Chihuahua,Shiba Inu,17
+Features + Random forest,American Pit Bull Terrier,Staffordshire Bull Terrier,16
+Features + Random forest,Staffordshire Bull Terrier,Boxer,16
+Features + Random forest,Birman,Ragdoll,15
+Features + Random forest,Egyptian Mau,Bengal,14
+Features + Random forest,Staffordshire Bull Terrier,American Bulldog,13
+Features + Random forest,American Pit Bull Terrier,German Shorthaired,13
+Features + Random forest,Maine Coon,Ragdoll,12

@@ -1,0 +1,110 @@
+{
+  "env": {
+    "python": "3.14.4",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.5",
+    "device": "mps",
+    "seed": 42,
+    "deterministic_algorithms_requested": true,
+    "deterministic_warn_only": true,
+    "cudnn_deterministic": true,
+    "num_workers": 0
+  },
+  "dataset": {
+    "name": "Oxford-IIIT Pet",
+    "train_samples": 2944,
+    "val_samples": 736,
+    "test_samples": 3669,
+    "num_classes": 37,
+    "split_seed": 42
+  },
+  "timing_notes": {
+    "neural_training": "15 epochs including validation/checkpointing; excludes final evaluation",
+    "sklearn_selected": "train+val frozen feature extraction plus one selected classifier fit",
+    "sklearn_full_search": "train+val extraction plus all candidate fit times; excludes prediction times",
+    "test_extraction": "measured separately and excluded from training time",
+    "hardware": "PyTorch backbone on selected torch device; scikit-learn fitting on CPU"
+  },
+  "test_feature_extraction_time_s": 11.175609624995559,
+  "results": {
+    "full": {
+      "approach": "Full fine-tuning",
+      "trainable_params": 1555781,
+      "training_time_s": 280.9978622500057,
+      "feature_extraction_time_s": null,
+      "hyperparameter_search_time_s": null,
+      "best_epoch": 11,
+      "hyperparams": "AdamW lr=0.0003 wd=0.0001 bs=64 epochs=15 cosine schedule, CE loss",
+      "train_acc": 0.9983016304347826,
+      "val_acc": 0.8872282608695652,
+      "test_acc": 0.8282910874897792,
+      "test_macro_f1": 0.8244879326368366
+    },
+    "head": {
+      "approach": "Head training",
+      "trainable_params": 628773,
+      "training_time_s": 165.644997084004,
+      "feature_extraction_time_s": null,
+      "hyperparameter_search_time_s": null,
+      "best_epoch": 12,
+      "hyperparams": "AdamW lr=0.001 wd=0.0001 bs=64 epochs=15 cosine schedule, CE loss",
+      "train_acc": 0.9962635869565217,
+      "val_acc": 0.9021739130434783,
+      "test_acc": 0.8699918233851186,
+      "test_macro_f1": 0.8687025529838661
+    },
+    "sk_logreg": {
+      "approach": "Features + Logistic regression",
+      "trainable_params": 21349,
+      "tree_nodes": null,
+      "training_time_s": 0.4575074580061482,
+      "feature_extraction_time_s": 11.070261916000163,
+      "hyperparameter_search_time_s": 0.6748434580003959,
+      "selected_model_pipeline_time_s": 11.527769374006311,
+      "full_search_pipeline_time_s": 11.745105374000559,
+      "best_epoch": null,
+      "train_acc": 0.9881114130434783,
+      "val_acc": 0.876358695652174,
+      "hyperparams": "C=0.01; StandardScaler fitted on train only",
+      "test_feature_extraction_time_s": 11.175609624995559,
+      "test_acc": 0.856909239574816,
+      "test_macro_f1": 0.8550813055606785
+    },
+    "sk_linsvm": {
+      "approach": "Features + Linear SVM",
+      "trainable_params": 21349,
+      "tree_nodes": null,
+      "training_time_s": 6.161957042000722,
+      "feature_extraction_time_s": 11.070261916000163,
+      "hyperparameter_search_time_s": 155.41296041599708,
+      "selected_model_pipeline_time_s": 17.232218958000885,
+      "full_search_pipeline_time_s": 166.48322233199724,
+      "best_epoch": null,
+      "train_acc": 0.9989809782608695,
+      "val_acc": 0.875,
+      "hyperparams": "C=0.01; StandardScaler fitted on train only",
+      "test_feature_extraction_time_s": 11.175609624995559,
+      "test_acc": 0.833469610248024,
+      "test_macro_f1": 0.8308542525118069
+    },
+    "sk_rf": {
+      "approach": "Features + Random forest",
+      "trainable_params": null,
+      "tree_nodes": 433368,
+      "training_time_s": 1.857255000002624,
+      "feature_extraction_time_s": 11.070261916000163,
+      "hyperparameter_search_time_s": 5.879659543003072,
+      "selected_model_pipeline_time_s": 12.927516916002787,
+      "full_search_pipeline_time_s": 16.949921459003235,
+      "best_epoch": null,
+      "train_acc": 1.0,
+      "val_acc": 0.876358695652174,
+      "hyperparams": "n_estimators=300; StandardScaler fitted on train only",
+      "test_feature_extraction_time_s": 11.175609624995559,
+      "test_acc": 0.830744071954211,
+      "test_macro_f1": 0.8254990368088176
+    }
+  }
+}
